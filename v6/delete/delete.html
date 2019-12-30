@@ -1,0 +1,99 @@
+<html>
+	<body> 
+		<form action="delete.php" method="post">
+		<select name="first" onChange="change()" id="first">
+				<option value="department">department</option>
+				<option value="disease">disease</option>
+				<option value="hospital">hospital</option>				
+				<option value="patient">patient</option>
+				<option value="patient_treatment">patient_treatment</option>
+				<option value="physician">physician</option>
+				<option value="treatment">treatment</option>
+				<option value="users">users</option>	
+		</select>
+		<br>
+		<select name="second" id="second">
+			<option>did</option>
+			<option>dname</option>
+			<option>dtel</option>
+			<option>hid</option>
+		</select>
+		<br>
+		<p>Delete record when its value equals to<input type=text name="selected" /></p>
+	
+		<br>
+ 		<p><input type="submit" name="submit2" value="Delete" /></p>
+
+<script>
+	function change() {
+		var x = document.getElementById("first");
+   		var y = document.getElementById("second");
+	   	y.options.length = 0; // clear all the content in the second selection
+   
+   		if(x.selectedIndex == 0){ // department
+			y.options.add(new Option("did", "did")); 
+			y.options.add(new Option("dname", "dname"));   // default selected
+			y.options.add(new Option("dtel", "dtel"));
+			y.options.add(new Option("hid", "hid"));
+   		}
+ 
+   		if(x.selectedIndex == 1){ // disease
+			y.options.add(new Option("deid", "deid")); 
+			y.options.add(new Option("dename", "dename", false, true));  // default selected
+   		}
+   
+   		if(x.selectedIndex == 2){ // hospital
+   			y.options.add(new Option("hid", "hid"));
+   			y.options.add(new Option("hname", "hname", false, true)); // default selected
+   			y.options.add(new Option("hst_address", "hst_address"));
+   			y.options.add(new Option("hst_city", "hst_city"));
+   			y.options.add(new Option("hstate", "hstate"));
+   			y.options.add(new Option("hzip", "hzip"));
+   		}
+   
+   		if(x.selectedIndex == 3){ // patient
+   			y.options.add(new Option("pid", "pid"));
+   			y.options.add(new Option("pfname", "pfname", false, true)); // default selected
+   			y.options.add(new Option("plname", "plname"));
+   			y.options.add(new Option("pgender", "pgender"));
+   			y.options.add(new Option("pbd", "pbd"));
+   			y.options.add(new Option("prace", "prace"));
+   			y.options.add(new Option("pstatus", "pstatus"));
+   		}
+   
+   		if(x.selectedIndex == 4){ // patient_treatment
+   			y.options.add(new Option("tdate", "tdate"));
+   			y.options.add(new Option("tfreq", "tfreq", false, true)); // default selected
+   			y.options.add(new Option("tstatus", "tstatus"));
+   			y.options.add(new Option("pid", "pid"));
+   			y.options.add(new Option("tid", "tid"));
+   			y.options.add(new Option("phid", "phid"));
+   		}
+   
+   		if(x.selectedIndex == 5){// physician
+   			y.options.add(new Option("phid", "phid"));
+   			y.options.add(new Option("phfname", "phfname", false, true)); // default selected
+   			y.options.add(new Option("phtel", "phtel"));
+   			y.options.add(new Option("phspl", "phspl"));
+   			y.options.add(new Option("hid", "hid"));
+   		}
+   
+   		if(x.selectedIndex == 6){ // treatment
+   			y.options.add(new Option("tid", "tid"));
+   			y.options.add(new Option("tname", "tname", false, true)); // default selected
+   			y.options.add(new Option("ttype", "ttype"));
+   			y.options.add(new Option("deid", "deid"));
+  		}
+   
+   		if(x.selectedIndex == 7){// users
+     		y.options.add(new Option("UID", "UID"));
+   			y.options.add(new Option("ufname", "ufname", false, true)); // default selected
+   			y.options.add(new Option("ulname", "ulname"));
+   			y.options.add(new Option("urole", "urole"));
+   			y.options.add(new Option("did", "did"));
+   		}
+	}
+		</script> 
+	</form>
+	</body>
+</html>

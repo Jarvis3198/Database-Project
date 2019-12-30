@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<form action="insert.php" method="post">
+			<select name="tablename" id="insertselect">
+				<option value="department">department</option>
+				<option value="disease">disease</option>
+				<option value="hospital">hospital</option>				
+				<option value="patient">patient</option>
+				<option value="patient_treatment">patient_treatment</option>
+				<option value="physician">physician</option>
+				<option value="treatment">treatment</option>
+				<option value="users">users</option>
+			</select>
+			<br>
+			<p>this select is a hint for format you need to input, please choose the same index option in above and below selection</p>
+			<br>
+			<select name="hint" id="hint1">
+				<option value="0"> "did", "dname", "dtel", "hid" </option>
+				<option value="1"> "deid", "dename"  </option>
+				<option value="2"> "hid", "hname", "hst_address", "hst_city", "hstate", "hzip" </option>
+				<option value="3"> "pid", "pfname", "plname", "pgender", "pbd", "prace", "pstatus" </option>
+				<option value="4"> "tdate", "tfreq", "tstatus", "pid", "tid", "phid" </option>
+				<option value="5"> "phid", "phfname", "phtel", "phspl", "hid" </option>
+				<option value="6"> "tid", "tname", "ttype", "deid" </option>
+				<option value="7"> "UID", "ufname", "ulname", "urole", "did" </option>
+			</select>
+			<p>The format is like columnvalue1, columnvalue2; use comma to separate column's values</p>
+			<p>please input the value of new record<input type=text name="recordvalue"></p>
+			<p><input type="submit" name="insert1" value="Insert" /></p>
+			
+		</form>
+	
+	
+	
+		
+	</body>
+</html>
